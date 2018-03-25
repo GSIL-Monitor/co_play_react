@@ -17,6 +17,34 @@ const ViewPage = React.createClass({
 			},{
 				text: "自由管理自己的服务",
 				img: "http://daofengdj.com/public/static/public/img/ico_ft05.png"
+			}],
+			relList: [{
+				key: "link",
+				img: "http://daofengdj.com//public/static/public/img/link.png",
+				text: "租号玩-账号租借平台",
+				text2: "蚂蚁代练-专业代练平台",
+				link: "http://www.baidu.com",
+				link2: "http://www.baidu.com"
+			},{
+				key: "tel",
+				img: "http://daofengdj.com//public/static/public/img/kefu.png",
+				text: "客服电话：0558-5519258",
+				text2: "咨询时间：09:00-02:30",
+			},{
+				key: "qq",
+				img: "http://daofengdj.com//public/static/public/img/qq.png",
+				text: "客服QQ：1353761057",
+				text2: "咨询时间：09:00-02:30",
+			}],
+			infoList: [{
+				text: "联系我们",
+				link: "http://www.baidu.com"
+			},{
+				text: "公司简介",
+				link: "http://www.baidu.com"
+			},{
+				text: "免责声明",
+				link: "http://www.baidu.com"
 			}]
 		}
 	},
@@ -37,6 +65,30 @@ const ViewPage = React.createClass({
 		        		})
 		        	}
 	        	</div>
+	        	<div className="rel-list">
+	        		{ relList.map((item, index) => {
+	        			return (
+	        				<div className={`item ${item.key}`} key={index} style={{width: (100/relList.length) + '%'}}>
+	        					<div className="cont">
+	        						<img src={itm.img}/>
+	        						<div className="main">
+	        							<a className="i i1" href={item.key == 'link' ? item.link : "javascript:void(0)"} target="_blank">{item.text}</a>
+	        							<a className="i i2" href={item.key == 'link' ? item.link2 : "javascript:void(0)"} target="_blank">{item.text2}</a>
+	        						</div>
+	        					</div>
+	        					<div className="sp"></div>
+	        				</div>
+	        			)
+	        		})}
+	        	</div>
+	        	<div className="info-list">
+	        		{ infoList.map((item, index) => {
+	        			return (
+	        				<a className="item" href={item.link} target="_blank">{item.text}</a>
+	        			)
+	        		})}
+	        	</div>
+	        	<div className="copyright">版权所有&copy;2017牛牌出品</div>
 	        </div>
     		</div>
 
