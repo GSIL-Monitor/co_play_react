@@ -50,7 +50,7 @@ const ViewPage = React.createClass({
 				img: "https://img.daofengdj.com/uploads/avatar/000/12/20/122031_avatar_big.jpg",
 				discount: 8,
 				name: "单客1",
-				tags: [11,21],
+				tags: [1,2],
 				oldFee: 33,
 				newFee: 11,
 				status: 0,
@@ -59,7 +59,7 @@ const ViewPage = React.createClass({
 				img: "https://img.daofengdj.com/uploads/avatar/000/11/86/118633_avatar_big.jpg",
 				discount: 8,
 				name: "单客2",
-				tags: [31,21],
+				tags: [3,2],
 				oldFee: 33,
 				newFee: 11,
 				status: 1,
@@ -68,7 +68,7 @@ const ViewPage = React.createClass({
 				img: "https://img.daofengdj.com/uploads/avatar/000/12/20/122031_avatar_big.jpg",
 				discount: 8,
 				name: "单客1",
-				tags: [11,21],
+				tags: [1,2],
 				oldFee: 33,
 				newFee: 11,
 				status: 0,
@@ -77,7 +77,7 @@ const ViewPage = React.createClass({
 				img: "https://img.daofengdj.com/uploads/avatar/000/11/86/118633_avatar_big.jpg",
 				discount: 8,
 				name: "单客2",
-				tags: [31,21],
+				tags: [3,2],
 				oldFee: 33,
 				newFee: 11,
 				status: 1,
@@ -114,7 +114,7 @@ const ViewPage = React.createClass({
 	render() {
 		let { gameTypeMap, normalTypeList, goodsList } = this.state;
 		return (
-			<div className="main-wrapper">
+			<div className="main-wrapper c">
 				<ChooseBlock gameTypeMap={gameTypeMap} normalTypeList={normalTypeList} />
 				<GoodsList list={goodsList} />
 			</div>

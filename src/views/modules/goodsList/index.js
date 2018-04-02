@@ -3,9 +3,9 @@ const ViewPage = react.createClass({
 	getInitialState() {
 		return {
 			tagMap: {
-				11: "标签11",
-				21: "标签21",
-				31: "标签31"
+				1: "标签11",
+				2: "标签21",
+				3: "标签31"
 			},
 			statusMap: {
 				0: {
@@ -37,7 +37,8 @@ const ViewPage = react.createClass({
 									<img className="pic-img" src={item0.img}/>
 									<div className="dis">
 										<div className={`dis-tag ${!discount || discount == 10 ? 'hide' : '' }`}>低至{discount}折</div>
-										<div className="dis-text">限时活动&nbsp;下单就减&gt;</div>
+										<div className="dis-in-bl-middle dis-text">限时活动&nbsp;下单就减</div>
+										<img className="dis-in-bl-middle dis-ico" src="http://daofengdj.com/public/static/public/img/ico_30.png"/>
 									</div>
 								</div>
 								<div className="play-info">
@@ -45,7 +46,7 @@ const ViewPage = react.createClass({
 									<div className="tags-box">
 										{ item0.tags && item0.tags.map((item, index) => {
 												return (
-													<span className={`dis-in-bl-middle tag color-${item}`}>{tagMap[item]}</span>
+													<span className={`dis-in-bl-middle tag tag-${item}`}>{tagMap[item]}</span>
 												)
 											})
 										}

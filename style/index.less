@@ -3,13 +3,16 @@
 a {
   color: @main-font-gray;
 }
+body {
+  background-color: @gray-light-bg;
+  font-size: @font-size-sm2;
+}
 .main-wrapper {
   width: 1200px;
   margin: auto;
 }
 /*类型选择模块*/
 .type-choose-block {
-  font-size: @font-size-sm2;
   border: 1px solid @gray-light-border;
   .choose-line {
     padding: 0 20px;
@@ -115,6 +118,7 @@ a {
     margin: 0px 3% 30px 0px;
     position: relative;
     overflow: hidden;
+    background-color: white;
     a {
       display: block;
     }
@@ -147,29 +151,73 @@ a {
       top: -6px;
       background: url(http://daofengdj.com/public/static/public/img/ico_29.png) no-repeat;
     }
-    .dis-text {
-      font-size: @font-size-sm2;
+    .dis-ico {
+      margin: 0 5px; 
     }
     .name {
-      
+      font-size: @font-size-md;
+    }
+    .play-info {
+      padding: 3px 6px;
     }
     .tags-box {
       float: right;
     }
     .tag {
-      padding: 1px 2px;
+      padding: 2px 5px;
+      margin-right: 5px;
       border-radius: 2px;
+      color: white;
+      font-size: @font-size-tiny3;
+    }
+    .tag:last-child {
+      margin-right: 0;
+    }
+    .tag-1 {
+      background-color: #4fc1c8;
+    }
+    .tag-2 {
+      background-color: #67b696;
+    }
+    .tag-3 {
+      background-color: #82b377;
+    }
+    .play-other {
+      padding: 3px 8px 3px 6px;
     }
     .level {
       text-align: left;
+      color: @gray-light-4;
     }
     .fee-box {
       float: right;
       text-align: right;
+      clear: both;
     }
     .s1 {
       text-decoration: line-through;
-      font-size: @font-size-sm;
+      font-size: @font-size-tiny3;
+      margin-right: 5px;
+    }
+    .s2 {
+      color: @font-red;
+    }
+    .status {
+      position: absolute;
+      top: 7px;
+      left: 10px;
+      height: 20px;
+      line-height: 20px;
+      font-size: @font-size-tiny3;
+      color: white;
+      padding: 1px 12px 1px 25px;
+      border-radius: 10px;
+    }
+    .status.online {
+      background: rgba(0,0,0,0.5) url(http://daofengdj.com/public/static/home/img/index/online.png) 10px center no-repeat;
+    }
+    .status.offline {
+      background: rgba(0,0,0,0.5) url(http://daofengdj.com/public/static/home/img/index/offline.png) 10px center no-repeat;
     }
   }
   .item:nth-child(4n) {
@@ -215,7 +263,6 @@ a {
     }
   }
   .rel-list {
-    font-size: @font-size-sm2;
     width: 80%;
     margin: auto;
     text-align: center;
@@ -238,7 +285,6 @@ a {
     }
   }
   .info-list {
-    font-size: @font-size-sm2;
     text-align: center;
     .item {
       padding: 0 30px 20px;
