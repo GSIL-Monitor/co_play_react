@@ -1,2 +1,255 @@
 @import 'base.less';
 @import 'constant.less';
+a {
+  color: @main-font-gray;
+}
+.main-wrapper {
+  width: 1200px;
+  margin: auto;
+}
+/*类型选择模块*/
+.type-choose-block {
+  font-size: @font-size-sm2;
+  border: 1px solid @gray-light-border;
+  .choose-line {
+    padding: 0 20px;
+    border-bottom: 1px solid @gray-light-border;
+    .name {
+      width: 120px;
+      line-height: 80px;
+      text-align: center;
+    }
+    .item {
+      height: 60px;
+      line-height: 60px;
+      width: 125px;
+      cursor: pointer;
+      text-align: center;
+      overflow: hidden;
+    }
+    .active.item {
+      color: @red-main;
+      z-index: 1;
+      font-weight: bold;
+    }
+  }
+  .normal-line {
+    .name {
+      line-height: 60px;
+    }
+    .items {
+      padding: 0 20px;
+    }
+  }
+  .game-line {
+    .items {
+      padding: 10px 20px;
+    }
+    .item {
+      position: relative;
+      border: 1px solid @gray-light-border;
+      margin: -1px -1px 0 0;
+    }
+    .active.item {
+      border: 1px solid @red-main;
+    }
+    .text {
+      display: none;
+    }
+    .item:first-child .text {
+      display: block;
+    }
+    .ico {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: none;
+    }
+    .active .ico {
+      display: block;
+    }
+    .g-img {
+      height: 45px;
+      width: auto;
+      vertical-align: middle;
+    }
+    .item:hover .g-img {
+      animation: sk 1s;
+      -webkit-animation: sk 1s;
+    }
+    @keyframes sk{
+      0%, 11.1%, 100% {
+          transform: none;
+      }
+      22.2% {
+          transform: skewX(-12.5deg) skewY(-12.5deg);
+      }
+      33.3% {
+          transform: skewX(6.25deg) skewY(6.25deg);
+      }
+      44.4% {
+          transform: skewX(-3.125deg) skewY(-3.125deg);
+      }
+      55.5% {
+          transform: skewX(1.5625deg) skewY(1.5625deg);
+      }
+      66.6% {
+          transform: skewX(-0.78125deg) skewY(-0.78125deg);
+      }
+      77.7% {
+          transform: skewX(0.390625deg) skewY(0.390625deg);
+      }
+      88.8% {
+          transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+      }
+    }
+  }
+}
+/* 单主模块 */
+.goods-list {
+  text-align: center;
+  overflow: hidden;
+  .item {
+    text-align: left;
+    width: 22%;
+    margin: 0px 3% 30px 0px;
+    position: relative;
+    overflow: hidden;
+    a {
+      display: block;
+    }
+    .pic-box {
+      position: relative;
+      width: 100%;
+    }
+    .pic-img {
+      width: 100%;
+      display: block;
+    }
+    .dis {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(219,28,28,.8);
+      border-top: solid 1px #ff9600;
+      padding: 2px 3px;
+      box-sizing: border-box;
+      text-align: right;
+      color: white;
+    }
+    .dis-tag {
+      position: absolute;
+      width: 80px;
+      height: 27px;
+      line-height: 27px;
+      text-align: center;
+      left: 6px;
+      top: -6px;
+      background: url(http://daofengdj.com/public/static/public/img/ico_29.png) no-repeat;
+    }
+    .dis-text {
+      font-size: @font-size-sm2;
+    }
+    .name {
+      
+    }
+    .tags-box {
+      float: right;
+    }
+    .tag {
+      padding: 1px 2px;
+      border-radius: 2px;
+    }
+    .level {
+      text-align: left;
+    }
+    .fee-box {
+      float: right;
+      text-align: right;
+    }
+    .s1 {
+      text-decoration: line-through;
+      font-size: @font-size-sm;
+    }
+  }
+  .item:nth-child(4n) {
+    margin-right: 0;
+  }
+  .item:hover {
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    animation: sc 2s;
+    -wekkit-animation: sc 2s;
+  }
+  
+  @keyframes sc {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    50% {
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+}
+/*页脚*/
+.footer-zone {
+  color: @main-font-gray;
+  width: 100%;
+  min-width: 1200px;
+  .main-zone {
+    width: 1200px;
+    margin: auto;
+  }
+  .uni-list {
+    padding: 30px;
+    border-bottom: 1px dashed @gray-light-3;
+    .item {
+      text-align: center;
+    }
+    .main-img {
+      display: block;
+      width: 100px;
+      margin: auto;
+    }
+  }
+  .rel-list {
+    font-size: @font-size-sm2;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    .item {
+      padding: 0 30px;
+      margin: 20px 0;
+      position: relative;
+    }
+    .cont {
+      .main {
+        text-align: left;
+        padding-left: 10px;
+      }
+    }
+    .sp {
+      position: absolute;
+      right: 0;
+      border-left: 1px solid @gray-light-3;
+      height: 90%;
+    }
+  }
+  .info-list {
+    font-size: @font-size-sm2;
+    text-align: center;
+    .item {
+      padding: 0 30px 20px;
+    }
+  }
+  .copyright {
+    text-align: center;
+  }
+}
+  // 页面不存在
+.error-page {
+  font-size: @font-size-md2;
+}
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import fn from '../../utils/fn';
 import {PAGE_ROUTE} from '../../routes/constants';
-import Footer from 'views_path/modules/footer/index';
+import Footer from 'views_path/modules/Footer/index';
 const ViewPage = React.createClass({
     getInitialState: function () {
         return {
