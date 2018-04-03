@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var autoprefixer = require('autoprefixer');
 
 var devEntryBundle = [
     'webpack/hot/dev-server',
@@ -48,7 +49,8 @@ module.exports = {
             {
                 test: /\.(css|less)$/,
                 include: [path.resolve(__dirname, 'node_modules'), path.resolve(__dirname, 'style'), path.resolve(__dirname, 'src/views')],
-                loader: ExtractTextPlugin.extract('style', '!css!less')
+                loader: ExtractTextPlugin.extract('style', 'css!postcss!less')
+                // loader: 'style-loader!css-loader!postcss-loader!less-loader'
             }
         ]
     },
@@ -62,10 +64,10 @@ module.exports = {
         extensions: ['', '.js', '.jsx']
     },
     
-    postcss: function() {
-        return [require('autoprefixer'), require('precss')]
-    },
-
+    // postcss: function() {
+    //     return [require('autoprefixer'), require('precss')]
+    // },
+    postcss: [ autoprefixer({ browsers: ['> 0%', 'last 3 versions'] })],
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new ExtractTextPlugin("[name].css"),

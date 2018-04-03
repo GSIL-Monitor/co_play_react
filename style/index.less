@@ -7,20 +7,23 @@ body {
   background-color: @gray-light-bg;
   font-size: @font-size-sm2;
 }
-.main-wrapper {
+.main-page {
   width: 1200px;
   margin: auto;
 }
 /*类型选择模块*/
 .type-choose-block {
   border: 1px solid @gray-light-border;
+  background-color: white;
+  margin: 10px 0;
   .choose-line {
-    padding: 0 20px;
+    padding: 0 20px 0 0;
     border-bottom: 1px solid @gray-light-border;
     .name {
       width: 120px;
       line-height: 80px;
       text-align: center;
+      background-color: @gray-light-bg-2;
     }
     .item {
       height: 60px;
@@ -29,6 +32,9 @@ body {
       cursor: pointer;
       text-align: center;
       overflow: hidden;
+      &:hover {
+        color: @red-main;
+      }
     }
     .active.item {
       color: @red-main;
@@ -241,9 +247,235 @@ body {
     }
   }
 }
+
+/* 侧边栏 */
+.side-float {
+  text-align: center;
+  position: fixed;
+  right: 20px;
+  bottom: 8%;
+  z-index: 99;
+  .box1 {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 30px;
+    .text {
+      position: absolute;
+      color: white;
+      z-index: 1;
+      border-radius: 50%;
+      background-color: @orange-bg-1;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      font-size: @font-size-tiny3;
+    }
+    .text span:first-child {
+      padding-top: 5px;
+      display: inline-block;
+    }
+    .circle-zone {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    .circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(245,124,0,0.5);
+      border-radius: 50%;
+    }
+    .circle1 {
+      animation: turn1 4s ease 1s infinite;
+    }
+    .circle2 {
+      animation: turn1 6s ease 1s infinite;
+    }
+    .circle3 {
+      animation: turn1 8s ease 1s infinite;
+    }
+    @keyframes turn1 {
+      0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+      }
+      50% {
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+      }
+    }
+  }
+  .box2, .box3, .box4 {
+    .item {
+      width: 50px;
+      height: 50px;
+      border: solid 1px @gray-light-border-2;
+      cursor: pointer;
+      position: relative;
+      background: white;
+      &:hover {
+        background-color: @orange-bg-1;
+        border: solid 1px @orange-bg-1;
+      }
+    }
+  }
+  .box2 {
+    .item {
+      border-bottom: none;
+      &:hover {
+        border-bottom: none;
+      }
+      &:last-child {
+        border-bottom: solid 1px @gray-light-border-2;
+        &:hover {
+          border-bottom: solid 1px @orange-bg-1;
+        }
+      }
+      .info {
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+
+      }
+      .cont {
+        white-space: nowrap;
+        position: absolute;
+        top: -1px;
+        right: 50px;
+        background-color: @orange-bg-1;
+        border-radius: 6px 0 0 6px;
+        width: 0;
+        overflow: hidden;
+        transition: width 0.5s;
+        -webkit-transition: width 0.5s;
+      }
+      &:hover {
+        .cont {
+          width: 120px;
+        }
+      }
+      &.service:hover {
+        .cont {
+          width: 150px;
+        }
+      }
+      .i1 {
+        display: block;
+        width: 25%;
+        height: 4px;
+        border-radius: 4px;
+        background-color: @yellow-gray-bg-1;
+        margin: 10px auto;
+      }
+      .i2 {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: @yellow-gray-bg-1;
+        margin: 5px auto;
+      }
+      .qr-box {
+        background-color: white;
+        border-radius: 5px;
+        width: 100px;
+        margin: 0 auto;
+        padding: 0 0 5px;
+        .text {
+          font-size: @font-size-tiny3;
+          color: @font-dark-light-1;
+          line-height: 20px;
+        }
+        img {
+          width: 80px;
+          height: 80px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      .service-call {
+        width: 120px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 20px;
+        background-color: @yellow-bg-1;
+        margin: 10px auto;
+      }
+      &.service .text {
+        font-size: @font-size-tiny3;
+        color: white;
+        &:last-child {
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .wx-public .info {
+      background-image: url(http://daofengdj.com/public/static/public/img/bar_ico_er.png);
+    }
+    .wx-public:hover .info {
+      background-image: url(http://daofengdj.com/public/static/public/img/bar_ico_er_hover.png);
+    }
+    .qq-group .info {
+      background-image: url(http://daofengdj.com/public/static/public/img/bar_ico_qq.png);
+    }
+    .qq-group:hover .info {
+      background-image: url(http://daofengdj.com/public/static/public/img/bar_ico_qq_hover.png);
+    }
+    .service .info {
+      background-image: url(http://daofengdj.com/public/static/public/img/kf.png);
+    }
+    .service:hover .info {
+      background-image: url(http://daofengdj.com/public/static/public/img/ico_kf.png);
+    }
+  }
+  .box3 {
+    margin: 20px 0;
+    .feedback {
+      border-radius: 5px;
+      line-height: 20px;
+      background: white url(http://daofengdj.com/public/static/public/img/ico_22.png) center center no-repeat;
+      .text {
+        display: none;
+        padding-top: 5px;
+      }
+    }
+    .feedback:hover {
+      color: white;
+      background-image: none;
+      .text {
+        display: inline-block;
+        padding-top: 5px;
+      }
+    }
+  }
+  .box4 {
+    .top {
+      line-height: 60px;
+      border-radius: 5px;
+      background: #f6f6f6 url(http://daofengdj.com/public/static/public/img/top.png)center 12px no-repeat;
+    }
+    .top:hover {
+      color: white;
+      background: #f57c00 url(http://daofengdj.com/public/static/public/img/ico_fh.png)center 12px no-repeat;
+    }
+  }
+}
 /*页脚*/
 .footer-zone {
   color: @main-font-gray;
+  background-color: white;
   width: 100%;
   min-width: 1200px;
   .main-zone {

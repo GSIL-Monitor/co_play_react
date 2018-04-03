@@ -114,11 +114,10 @@ const ViewPage = React.createClass({
 	render() {
 		let { gameTypeMap, normalTypeList, goodsList } = this.state;
 		return (
-			<div className="main-wrapper c">
-				<ChooseBlock gameTypeMap={gameTypeMap} normalTypeList={normalTypeList} />
-				<GoodsList list={goodsList} />
-			</div>
-
+				<div className="main-page">
+					<ChooseBlock gameTypeMap={gameTypeMap} normalTypeList={normalTypeList} />
+					<GoodsList list={goodsList} />
+				</div>
 		)
 	}
 })

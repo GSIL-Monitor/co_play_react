@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var autoprefixer = require('autoprefixer');
 var args = process.argv.slice(2);
 console.log(args);
 var isDev = args[1] == '--env=development';
@@ -44,7 +45,7 @@ module.exports = {
             {
                 test: /\.(css|less)$/,
                 include: [path.resolve(__dirname, 'node_modules'), path.resolve(__dirname, 'style'), path.resolve(__dirname, 'src')],
-                loader: ExtractTextPlugin.extract('style', '!css!less')
+                loader: ExtractTextPlugin.extract('style', '!css!postcss!less')
             }
         ]
     },
@@ -58,9 +59,7 @@ module.exports = {
         extensions: ['', '.js', '.jsx']
     },
 
-    postcss: function() {
-        return [require('autoprefixer'), require('precss')];
-    },
+    postcss: [ autoprefixer({ browsers: ['> 0%', 'last 3 versions'] })],
 
     plugins: [
         new ExtractTextPlugin("[name].css"),

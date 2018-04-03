@@ -14,8 +14,8 @@
     "update": "git submodule update --remote",
     "dev": "node ./lib/server.js",
     "build": "webpack --optimize-minimize",
-    "debug": "webpack --watch --env=development --config webpack.debug.config.js",
-    "debugPre": "webpack --watch --env=developmentPre --config webpack.debug.config.js"
+    "debug": "webpack --watch --env=development --config webpack.config.js",
+    "debugPre": "webpack --watch --env=developmentPre --config webpack.config.js"
   },
   "keywords": [
     "react",
