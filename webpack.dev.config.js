@@ -2,6 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var autoprefixer = require('autoprefixer');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var devEntryBundle = [
     'webpack/hot/dev-server',
@@ -14,13 +15,14 @@ module.exports = {
     devtool: '#source-map',
 
     entry: {
-        bundle: devEntryBundle
+        bundle: devEntryBundle,
+        // vendor: ['react', 'react-dom'] //这样子会使vendor.js文件很大，还是用externals吧
     },
     externals: {
         'react': 'React',
-        'react-dom': 'ReactDOM',
-        './React': 'React',
-        './ReactDOM': 'ReactDOM'
+        'react-dom': 'ReactDOM'
+        // './React': 'React',
+        // './ReactDOM': 'ReactDOM'
     },
     output: {
         filename: '[name].js',
@@ -71,6 +73,13 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new ExtractTextPlugin("[name].css"),
-        new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'vendor.js')
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'public/index2.html')
+        }),// html复制
+        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: 'vendor',
+        //     filename: 'vendor.js'
+        // })
     ]
 }

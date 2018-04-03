@@ -1,5 +1,5 @@
-import react from 'react';
-const ViewPage = react.createClass({
+import React from 'react';
+const ViewPage = React.createClass({
 	getInitialState() {
 		return {
 			tagMap: {

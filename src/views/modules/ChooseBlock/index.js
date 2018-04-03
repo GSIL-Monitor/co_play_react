@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 const ViewPage = React.createClass({
 	getInitialState() {
 		return {
