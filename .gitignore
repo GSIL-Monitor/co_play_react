@@ -2,3 +2,7 @@
 node_modules/*
 dist/*
 .DS_Store
+src/views/modules/sideFloat/*
+src/views/modules/chooseBlock/*
+src/views/modules/footer/*
+src/views/modules/goodsList/*
