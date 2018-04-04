@@ -16,4 +16,40 @@ const FRIEND_LINK = [
 	{text: "掌游网",url: "http://zhanggame.com/"},
 	{text: "佳和互娱",url: "http://jiahehuyu.com/"}
 ]
-module.exports = { PAGE_ROUTE, FRIEND_LINK };
+
+const routeMap = {
+	index: "/",
+	coPlay: "/",
+	special: "/",
+	apply: "/",
+	charge: "/",
+	activity: "/",
+
+	message: "/message",
+	order: "/order",
+	register: "/register",
+	login: "/login",
+	set: "/"
+	 
+}
+const tabList = [{
+		text: "首页",
+		link: routeMap.index
+	},{
+		text: "找陪玩",
+		link: routeMap.coPlay
+	},{
+		text: "特价专区",
+		link: routeMap.special
+	},{
+		text: "申请入驻",
+		link: routeMap.apply
+	},,{
+		text: "充值",
+		link: routeMap.charge
+	},,{
+		text: "活动",
+		link: routeMap.activity
+	}]
+
+module.exports = { PAGE_ROUTE, FRIEND_LINK, routeMap, tabList};

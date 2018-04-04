@@ -3,7 +3,7 @@ import { Router, Route, IndexRoute, Redirect, browserHistory } from 'react-route
 import CoreLayout from '../layouts/CoreLayout/CoreLayout';
 import Authority from '../views/Authority/ErrorView';
 import Page404 from 'views_path/ErrorPages/Page404';
-import {PAGE_ROUTE} from './constants';
+import {PAGE_ROUTE} from 'utils_path/constants';
 module.exports = (
     <Router history={ browserHistory }>
         <Route path='/' component={CoreLayout}>
