@@ -37,7 +37,7 @@ const ViewPage = React.createClass({
 						<div className="other">
 							<i className="sp"></i>
 							<a className="i-item message" href={routeMap.message}></a>
-							<div className="user-box">
+							<div className="i-item user-box">
 								<div className="pic-box">
 									<a href={routeMap.order}>
 										<img className="avatar-img" src={userRel.avatarUrl} alt="" />

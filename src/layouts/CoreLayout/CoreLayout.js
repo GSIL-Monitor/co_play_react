@@ -8,7 +8,7 @@ const ViewPage = React.createClass({
     getInitialState: function () {
         return {
             logo: "https://zuhaowan.zuhaowan.com/v1/images/logo.png",
-            isLogin: false,
+            isLogin: true,
             userRel: {
                 avatarUrl: "http://daofengdj.com/public/static/public/img/ico_ft02.png"
             }
