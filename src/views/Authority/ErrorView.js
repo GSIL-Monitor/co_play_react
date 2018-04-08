@@ -16,7 +16,7 @@ const ViewPage = React.createClass({
 							<div className="row">
 								<div className="col-xs-12">
 									<div id="error-box-inner">
-										<img src="http://up.f2e.mogujie.org/static/imgs/error-no-permission.png" alt="Have you seen this page?"/>
+										<img src="" alt="Have you seen this page?"/>
 									</div>
 									<h2>
 										您暂无本页面的访问权限,请先申请
